@@ -17,7 +17,9 @@ public:
 	// destructor
 	~CIC();
 
-	// the actual filter function(input shuld be R continues samples and length should be R)
+	// the actual filter function
+	// the parameter input shuld be R-dimensional vector(R continuous samples) and the parameter length should be R
+	// the output is double, corresponding to the downsampled output
 	double filter(double *input, int length);
 
 	// reset the buffer

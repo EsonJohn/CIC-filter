@@ -50,6 +50,7 @@ double CIC::filter(double *input, int length)
 	if (length != this->R)
 		return 0;
 
+	double anttenuation = 1.0;	// the amplitude anttenuation factor, default as 1
 	double tmp_out = 0;
 	
 	// Integrator part
@@ -70,5 +71,5 @@ double CIC::filter(double *input, int length)
 		tmp_out = tmp_out - tmp;
 	}
 
-	return tmp_out;
+	return anttenuation * tmp_out;
 }
